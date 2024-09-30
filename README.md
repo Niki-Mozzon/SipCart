@@ -76,4 +76,35 @@ Wanna something to drink?
   Tests must be run on Docker, since there is an integration database containerized, so make sure to have docker installed and runnning on the background.
   Tests can be run while the app is deployed with `docker compose tests up` or by IDE right clicking on the `SipCartTesting` project and click on `Run Tests`
 
+
+  # The app
+  Once the DB is created, the back end is runnning and the front end too, we can finally access our website..
+  ### Landing page
+  When we land to http://localhost:4200/ we will see this page:
+  ![image](https://github.com/user-attachments/assets/6ef8ff3b-bdba-4439-ab63-4a21b2baf608)
+  Allows the user to select the drinks he wants to order and set the quantity.
+
+  ### Cart
+  When clicking on the cart icon in the top right of the screen we will open the cart:
+  ![image](https://github.com/user-attachments/assets/2d207bc7-99d7-4997-92b8-88924bd5054a)
+  Displays the products in the cart and set the quantity of the items in the cart.
+
+  ### Coupons
+  When the cart has at least one item and we press on Checkout message will pop up:
+  ![image](https://github.com/user-attachments/assets/2bfea2b3-882d-4c83-969f-5b44786cb5d1)
+  Where we can input a wrong coupon code and retry, insert a correct one and proceed further or just skip the coupon insertion and go directly to the checkout page (enter "abc" to test the coupon)
+
+  ### Checkout
+  Once we proceed further from the coupon pop up we arrive to the check out
+  ![image](https://github.com/user-attachments/assets/e039f8f8-dc3f-44dd-ba93-b66d5ffdffe5)
+  Here we can review our order and select the payment method we want (of course the amounts greater than 10€ will force the user to use card payments).
+
+  ### End
+  When we will purchsa the good we will see a message with the id of the order created in the database:
+  ![image](https://github.com/user-attachments/assets/b54c23e1-78e4-43f3-bafe-9e5be26cdbcf)
+
   
+
+  
+
+
