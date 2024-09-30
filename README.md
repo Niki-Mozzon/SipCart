@@ -103,7 +103,10 @@ Wanna something to drink?
   When we will purchsa the good we will see a message with the id of the order created in the database:
   ![image](https://github.com/user-attachments/assets/b54c23e1-78e4-43f3-bafe-9e5be26cdbcf)
 
+
   
+  # Flow
+  ![white back drawio](https://github.com/user-attachments/assets/85647748-4f64-4d06-96d9-52e0c2eefa8b)
 
   
 
