@@ -59,13 +59,15 @@ Wanna something to drink?
   another SQL Server DB instance inside a container of a test-container.
   
   
-  ## Hout to run the front end
+  ## How to run the front end
   To run the app you need to have Angular installed (I'm using 14.2.13) and Node (I'm using 14.20.0).
   
   PS: If you want to run with the back end in docker you have to go to `.\SipCart\sipcart\src\environments`, open the `environment.ts`, comment the line 7 and uncomment line 8.
 
   Open the terminal.
-  Go to `.\SipCart\sipcart`, digit `ng server` and press Enter.
+  Go to `.\SipCart\sipcart`;
+  Digit `npm i`, press Enter and wait the end of the process.
+  Digit `ng server`, press Enter and wait the end of the process
   Open any browser you want and go to `http://localhost:4200/drinks`.
   At this point the application will work.
 
