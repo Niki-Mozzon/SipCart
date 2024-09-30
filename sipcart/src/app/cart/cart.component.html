@@ -1,0 +1,38 @@
+<div class="container">
+
+ <div class="row" *ngIf="getProducts()&&getProducts()!.length>0;else emptyCart">
+  <div class="card mb-4">
+   <div class="card-header">
+    <h5 class="card-title">Cart</h5>
+   </div>
+   <div class="card-body">
+
+    <div class="container">
+     <div class="row">
+       <div class="col-md-3" *ngFor="let drink of getProducts()">
+        <app-product-card [product]="drink"></app-product-card>
+       </div>
+     </div>
+    </div>
+   </div>
+   <div class="card-body">
+    <div class="d-flex justify-content-between">
+     <h5>Total: {{ getTotal() }} €</h5>
+     <button class="btn btn-primary" (click)="openModal()">Checkout</button>
+    </div>
+    
+   </div>
+  </div>
+ </div>
+
+ <ng-template #emptyCart>
+  <div class="alert alert-warning" role="alert">
+   Your cart is empty
+  </div>
+ </ng-template>
+</div>
+
+
+
+
+

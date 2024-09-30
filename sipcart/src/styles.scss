@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+
+// Define custom colors
+$toast-success-bg: #28a745;
+$toast-error-bg: #dc3545;
+$toast-warning-bg: #ffc107;
+$toast-info-bg: #17a2b8;
+$toast-text-color: #fff;
+$toast-border-radius: 8px;
+$toast-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+// Shared toast styles
+@mixin toast-styling($bg-color, $text-color) {
+  background: linear-gradient(135deg, $bg-color, darken($bg-color, 10%));
+  color: $text-color;
+  border-radius: $toast-border-radius;
+  box-shadow: $toast-box-shadow;
+  padding: 1rem;
+  font-weight: 600;
+  position: relative;
+
+  // Optional hover effect for fun interaction
+  &:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  // Add animation to make toasts fade in
+  @keyframes fadeInToast {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  animation: fadeInToast 0.4s ease-out;
+}
+
+// Success toast styling
+.toast-success {
+  @include toast-styling($toast-success-bg, $toast-text-color);
+}
+
+// Error toast styling
+.toast-error {
+  @include toast-styling($toast-error-bg, $toast-text-color);
+}
+
+// Warning toast styling
+.toast-warning {
+  @include toast-styling($toast-warning-bg, #212529); // Darker text for contrast
+}
+
+// Info toast styling
+.toast-info {
+  @include toast-styling($toast-info-bg, $toast-text-color);
+}
+
+// Toast container styling
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1200;
+
+  .toast {
+    margin-bottom: 1rem;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  // Toast progress bar customization
+  .ngx-toastr .toast-progress {
+    height: 5px;
+    background-color: lighten($toast-text-color, 20%);
+    opacity: 0.8;
+  }
+}

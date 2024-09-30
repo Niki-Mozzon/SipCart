@@ -1,0 +1,24 @@
+<!-- Modal Template -->
+ <div class="modal-header">
+   <h4 class="modal-title">Do you have a coupon?</h4>
+   <button type="button" class="btn-close" aria-label="Close" (click)="dismiss()"></button>
+ </div>
+ <div class="modal-body">
+   <form>
+     <div class="mb-3">
+       <label for="couponCode" class="form-label">Enter Coupon Code</label>
+       <input type="text" [disabled]="validCoupon===true" class="form-control" id="couponCode" [(ngModel)]="couponCode" name="couponCode" placeholder="Enter coupon code">
+     </div>
+     <small *ngIf="validCoupon===false" class="text-danger">Invalid coupon code, please try again!</small>
+   </form>
+ </div>
+ <div class="modal-body" *ngIf="validCoupon">
+    <div class="mb-3">
+      <label for="discount" class="form-label">You will save:&nbsp;</label><span class="h2" >{{coupon?.percentageReduction}}%</span>
+    </div>
+</div>
+ <div class="modal-footer">
+   <button type="button" class="btn btn-secondary" *ngIf="!validCoupon" (click)="checkout()">Skip</button>
+   <button type="button" class="btn btn-primary" [disabled]="couponCode.length<3" *ngIf="!validCoupon" (click)="applyCoupon()">Apply Coupon</button>
+   <button type="button" class="btn btn-success" *ngIf="validCoupon" (click)="checkout()">Next</button>
+ </div>

@@ -1,0 +1,104 @@
+<div class="container my-5">
+ <div class="card p-4 rounded-lg shadow-lg">
+   <div class="card-header text-center bg-success text-white">
+     <h2>Checkout Summary</h2>
+   </div>
+
+   <div class="card-body">
+     <!-- Check if order is null -->
+     <div *ngIf="!order; else orderSummary">
+       <h4 class="text-danger text-center">No order found!</h4>
+       <p class="text-center">
+         Please go back to the drink selection page and add items to your order.
+       </p>
+     </div>
+
+     <ng-template #orderSummary>
+       <!-- Coupon and Discount Information -->
+       <div *ngIf="order.couponCode" class="text-center mb-4">
+         <span class="badge bg-success">
+           Coupon Code: {{ order.couponCode }} 
+         </span>
+         <h6 class="mt-2">
+           Enjoy a {{ order.percentageReduction }}% discount!
+         </h6>
+       </div>
+
+       <!-- Total Price Section -->
+       <div class="text-center my-4">
+         <h4 *ngIf="order.percentageReduction" class="text-muted">
+           Full Price: <span class="text-decoration-line-through">€{{ order.fullPrice }}</span>
+         </h4>
+         <h2 class="text-primary">
+           Total: €{{ order.totalPrice }}
+         </h2>
+       </div>
+
+       <!-- List of Products -->
+       <div>
+         <h5>Ordered Products:</h5>
+         <ul class="list-group mb-4">
+           <li
+             *ngFor="let product of order.products"
+             class="list-group-item d-flex justify-content-between align-items-center"
+           >
+             <strong>{{ product.drink.name }}</strong>
+             <span>x{{ product.quantity }}</span>
+           </li>
+         </ul>
+       </div>
+
+       <!-- Payment Method Section -->
+       <div class="mt-4">
+         <h5>Choose Your Payment Method:</h5>
+         <div class="form-check">
+           <input
+             class="form-check-input"
+             type="radio"
+             name="paymentMethod"
+             id="cash"
+             [value]="paymentMethodEnum.CASH"
+             [(ngModel)]="paymentMethod"
+             [disabled]="order.totalPrice > 10"
+           />
+           <label class="form-check-label" for="cash">
+             Cash
+           </label>
+         </div>
+         <div class="form-check">
+           <input
+             class="form-check-input"
+             type="radio"
+             name="paymentMethod"
+             id="card"
+             [value]="paymentMethodEnum.CARD"
+             [(ngModel)]="paymentMethod"
+           />
+           <label class="form-check-label" for="card">
+             Card
+           </label>
+         </div>
+
+         <!-- Alert for Card Payment Requirement -->
+         <div *ngIf="order.totalPrice > 10" class="alert alert-warning mt-2">
+           Cash payments not supported for amounts higher than 10€!
+         </div>
+       </div>
+
+       <!-- Confirm Button -->
+       <div class="text-center mt-4">
+         <button
+           type="button"
+           class="btn btn-success"
+           (click)="submitOrder()"
+           [disabled]="paymentMethod===undefined"
+         >
+           Confirm & Pay
+         </button>
+       </div>
+     </ng-template>
+   </div>
+ </div>
+</div>
+
+

@@ -1,0 +1,13 @@
+<div class="container">
+ <div *ngIf="drinks.length>0;else emptyDrinks" class="row">
+   <div class="col-md-3" *ngFor="let drink of drinks">
+    <app-product-card [product]="{drink:drink,quantity:0}"></app-product-card>
+   </div>
+ </div>
+
+ <ng-template #emptyDrinks>
+  <div class="alert alert-warning" role="alert">
+   No products to display!
+  </div>
+ </ng-template>
+</div>
