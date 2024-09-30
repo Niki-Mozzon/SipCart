@@ -12,7 +12,7 @@ Wanna something to drink?
   Once the IDE is open we can press play.
   ![image](https://github.com/user-attachments/assets/6c8274e4-d717-43c5-b7e5-c6f93bc68180)
   Don't forget now to create the database, go to SQL Server, access your server and create a database called `app`, and then run this query to populate it:
-    -- Create tables
+      
     CREATE TABLE [drinks] (
       [Id] INT PRIMARY KEY IDENTITY (1,1),
       [Name] VARCHAR(50) NOT NULL,
