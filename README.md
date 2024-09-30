@@ -71,4 +71,9 @@ Wanna something to drink?
   Open any browser you want and go to `http://localhost:4200/drinks`.
   At this point the application will work.
 
+  ## Testing
+  Due to the limited time I focused on integration testing to cover as much code as possible.
+  Tests must be run on Docker, since there is an integration database containerized, so make sure to have docker installed and runnning on the background.
+  Tests can be run while the app is deployed with `docker compose tests up` or by IDE right clicking on the `SipCartTesting` project and click on `Run Tests`
+
   
