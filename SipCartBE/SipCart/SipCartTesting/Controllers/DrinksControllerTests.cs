@@ -1,13 +1,13 @@
 ﻿using DotNet.Testcontainers.Containers;
-using IntegrationTests.Setup;
 using Newtonsoft.Json;
 using NUnit.Framework.Internal;
 using SipCartCore.Entities;
+using SipCartTesting.Setup;
 using System.Net;
 using System.Text;
 using Testcontainers.MsSql;
 
-namespace IntegrationTests.Controllers
+namespace SipCartTesting.Controllers
 {
     [TestFixture()]
     [Category("ExcludeOnDeploy")]

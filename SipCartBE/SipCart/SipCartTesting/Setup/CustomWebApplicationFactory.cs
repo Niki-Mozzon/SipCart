@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SipCartApi;
 using Testcontainers.MsSql;
 
-namespace IntegrationTests.Setup
+namespace SipCartTesting.Setup
 {
 
     internal sealed class CustomWebApplicationFactory : WebApplicationFactory<Program>

@@ -33,7 +33,7 @@ namespace SipCartCore.Services
             return entityEntry.Entity.Id;
         }
 
-        public async Task<OrderDetail> CheckOutAndCreateOrder(Dictionary<int, int> items, string couponCode)
+        public async Task<OrderDetail> CheckOutAndCreateOrderAsync(Dictionary<int, int> items, string couponCode)
         {
             if (items.Count < 1)
             {
@@ -72,7 +72,7 @@ namespace SipCartCore.Services
             return orders;
         }
 
-        private Tuple<decimal, decimal> GetTotalPrice(List<Product> products, Coupon? coupon)
+        private static Tuple<decimal, decimal> GetTotalPrice(List<Product> products, Coupon? coupon)
         {
             decimal totalPrice = 0;
             totalPrice += products.Sum(p => p.Drink.Price * p.Quantity);

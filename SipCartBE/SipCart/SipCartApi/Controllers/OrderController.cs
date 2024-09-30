@@ -19,7 +19,7 @@ namespace SipCartApi.Controllers
         {
             try
             {
-                OrderDetail order = await _orderService.CheckOutAndCreateOrder(input.Products, input.CouponCode);
+                OrderDetail order = await _orderService.CheckOutAndCreateOrderAsync(input.Products, input.CouponCode);
 
                 return Ok(order.OrderToOutput());
             }

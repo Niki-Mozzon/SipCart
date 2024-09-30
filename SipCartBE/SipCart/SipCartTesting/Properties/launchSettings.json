@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "IntegrationTests": {
+    "SipCartTesting": {
       "commandName": "Project"
     },
     "Container (Dockerfile)": {

@@ -1,9 +1,7 @@
 ﻿using DotNet.Testcontainers.Containers;
-using NUnit.Framework.Internal;
 using Testcontainers.MsSql;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
-namespace IntegrationTests.Setup
+namespace SipCartTesting.Setup
 {
     public class ContainerizedTests
     {
