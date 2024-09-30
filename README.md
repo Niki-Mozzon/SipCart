@@ -106,7 +106,8 @@ Wanna something to drink?
 
   
   # Flow
-  ![white back drawio](https://github.com/user-attachments/assets/85647748-4f64-4d06-96d9-52e0c2eefa8b)
+  ![diagram](https://github.com/user-attachments/assets/8aedbb3d-969d-4d39-81ae-e3ccce7661a8)
+
 
   
 
