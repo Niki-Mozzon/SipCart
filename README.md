@@ -108,6 +108,16 @@ Wanna something to drink?
   # Flow
   ![diagram](https://github.com/user-attachments/assets/8aedbb3d-969d-4d39-81ae-e3ccce7661a8)
 
+  # Possible problems
+
+  ## With Docker
+  If there are problems with DB in Docker make sure the entrypoint.sh fila is saved in LF
+  
+  ![image](https://github.com/user-attachments/assets/4ad467c1-6de0-4a24-903b-c4260a2a36e8)
+
+  Also in Docker make sure to call the api after you the db is populated
+  
+  ![image](https://github.com/user-attachments/assets/864f0857-e1a5-4244-a8bb-16f4b353c0d1)
 
   
 
