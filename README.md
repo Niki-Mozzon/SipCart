@@ -55,6 +55,7 @@ Wanna something to drink?
   Go to `.\SipCart\SipCartBE\SipCart`.
   Digit `docker-compose up` and press Enter.
   ![image](https://github.com/user-attachments/assets/4c7fb599-83f2-4861-ae1a-1d865f28c277)
+  
   It will take a long time because it will download a SQL Server image, which will be filled with some data, then it will also automatically run the tests which will query   
   another SQL Server DB instance inside a container of a test-container.
   
@@ -72,9 +73,9 @@ Wanna something to drink?
   At this point the application will work.
 
   ## Testing
-  Due to the limited time I focused on integration testing to cover as much code as possible.
-  Tests must be run on Docker, since there is an integration database containerized, so make sure to have docker installed and runnning on the background.
-  Tests can be run while the app is deployed with `docker compose tests up` or by IDE right clicking on the `SipCartTesting` project and click on `Run Tests`
+  Intregration Tests (the ones that end with (*ControllerTest) must be run on Docker, since there is an integration database containerized, so make sure to have docker     
+  installed and runnning on the background.
+  Tests can be run while the app is deployed with `docker compose -p tests up` or by IDE right clicking on the `SipCartTesting` project and click on `Run Tests`
 
 
   # The app
